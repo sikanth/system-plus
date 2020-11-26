@@ -28,7 +28,7 @@ exports.record = function (req, res, next) {
             }, function (err, result) {
                 if (err) return (new Error(err));
                 if (result.length > 0) {
-                    res.send("Movie Name Already Exist");
+                    res.send({'message':'Record ALready Exist'});
                     return next();
                 } else {
                     var doc = new Model(data);
@@ -36,7 +36,7 @@ exports.record = function (req, res, next) {
                     doc.save(function (err, result) {
                         if (err) next(new Error(err, "Something Went wrong Please try again"));
                         if(result){
-                        res.send("Record submitted succesfully");
+                        res.send({'message':'Record submitted succesfully'});
                         }
 
                     });
@@ -83,7 +83,7 @@ exports.records = function (req, res, next) {
 
 
         });
-        res.send("inserted");
+        res.send({'message':'inserted'});
 
     }
 
@@ -120,7 +120,7 @@ exports.getmovie = function (req, res, next) {
                     res.json(obj);
                     next();
                 }else{
-                    res.json("Records not available");
+                    res.json({'message':'Records not found'});
                 }
             
         });
