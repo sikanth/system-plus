@@ -1,0 +1,45 @@
+const express = require('express')
+const app = express()
+var normalizePort = require('normalize-port');
+var port = normalizePort(process.env.PORT || 3000);
+var bodyParser = require('body-parser');
+var bodyParserError = require('bodyparser-json-error');
+var routes = require('./route/home');
+var mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+var db = process.env.MONGODB || 'mongodb+srv://srikanth:ktNHcwFdhRcval8w@system.ir9my.mongodb.net/system-plus?retryWrites=true&w=majority';
+app.use(bodyParser.json());
+app.use(bodyParserError.beautify());
+
+mongoose.connect(db, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+});
+mongoose.connection.on('open', function () {
+    console.log('MongoDB Connected.');
+});
+mongoose.connection.on('error', function () {
+    console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+});
+
+
+
+// const uri = "mongodb+srv://srikanth:ktNHcwFdhRcval8w@system.ir9my.mongodb.net/sample-training?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("sample-training").collection("companies");
+//   // perform actions on the collection object
+//   client.close();
+// });
+
+
+
+app.listen(3000, () => console.log("server running port at :" + port));
+app.use('/', routes)
+
+module.exports = app;

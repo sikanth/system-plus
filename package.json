@@ -1,0 +1,34 @@
+{
+  "name": "system-plus",
+  "version": "1.0.0",
+  "description": "system-plus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sikanth/system-plus.git"
+  },
+  "author": "srikanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sikanth/system-plus/issues"
+  },
+  "homepage": "https://github.com/sikanth/system-plus#readme",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "async": "^3.2.0",
+    "bodyparser-json-error": "^1.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "exception-handler": "^0.4.0",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.15",
+    "mongoose-paginate": "^5.0.3",
+    "normalize-port": "^1.0.0"
+  }
+}
