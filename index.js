@@ -1,13 +1,14 @@
 const express = require('express')
 const app = express()
 var normalizePort = require('normalize-port');
-var port = normalizePort(process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var bodyParserError = require('bodyparser-json-error');
 var routes = require('./route/home');
 var mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
+const { url } = require('inspector');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
