@@ -5,6 +5,16 @@ var async = require('async');
 
 /**
  * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
+exports.home = function (req, res, next) {
+    res.send("Home Directory");
+}
+
+/**
+ * 
  * @param {*} req  endpoint: /movie, Payload:{"name":"srikant", "year":"2/21/2020", "director":"er"}
  * @param {*} res  "Record submitted succesfully"
  * @param {*} next 

@@ -5,6 +5,7 @@ var router = express.Router();
 
 var moviesController = require('../controller/movies');
 
+router.get('/',  moviesController.home);
 router.post('/movie',  moviesController.record);
 router.post('/movies',  moviesController.records);
 router.get('/movies/:id',  moviesController.getmovie);
