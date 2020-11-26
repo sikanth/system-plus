@@ -40,7 +40,7 @@ mongoose.connection.on('error', function () {
 
 
 
-app.listen(3000, () => console.log("server running port at :" + port));
+app.listen(3000, () => console.log("server running port at. :" + port));
 app.use('/', routes)
 
 module.exports = app;
