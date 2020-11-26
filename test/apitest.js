@@ -33,6 +33,7 @@ describe('Podcast', () => {
                   .post('/movie')
                   .send(movie)
                   .end((err, res) => {
+                    setTimeout(done, 7500);
                     res.body.should.be.a('object');
                    
                   });
@@ -43,21 +44,19 @@ describe('Podcast', () => {
   
    describe('/GET movies', () => {
         it('it should search and GET a movie details if present in db', (done) => {
-            let query="";
+            let query="query?name=srikanth";
         chai.request(server)
             .get('/movies/:id')
-            .send(query)
+            .send({query:"query", name:"srikanth"})
             .end((err, res) => {
                 res.should.have.status(200);
-                res.body.should.have.a('Something Went wrong Please try again');
-                res.body.should.be.a('object');
-                res.body.should.have.property('errors');
-                res.body.errors.should.have.property('name');
-                res.body.errors.pages.should.have.property('year');
-                res.body.errors.pages.should.have.property('director');
-           
+                res.should.have.a('object');
+                res.should.be.a('Array');
+                err.shound.have.a('object');
+               
              });
              done();
+            
             });
         });
    });
