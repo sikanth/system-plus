@@ -1,3 +1,4 @@
+require('stackify-node-apm');
 const express = require('express')
 const app = express()
 var normalizePort = require('normalize-port');
@@ -9,13 +10,14 @@ var mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 const { url } = require('inspector');
+var stackify = require('stackify-logger');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 var db = process.env.MONGODB || 'mongodb+srv://srikanth:ktNHcwFdhRcval8w@system.ir9my.mongodb.net/system-plus?retryWrites=true&w=majority';
 app.use(bodyParser.json());
 app.use(bodyParserError.beautify());
-
+app.use(stackify.expressExceptionHandler);
 mongoose.connect(db, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -42,5 +44,5 @@ mongoose.connection.on('error', function () {
 
 app.listen(port, () => console.log("server running port at. :" + port));
 app.use('/', routes)
-
+stackify.start({apiKey: '8Xj6Nn0Vc5Qm5Eb4Nb2Wt3Ti4Ur0Ah1Xt2Qc1Lw', appName: 'system', env: 'qa', debug: true});
 module.exports = app;

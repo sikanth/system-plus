@@ -1,0 +1,53 @@
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) -------------------
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) Debugging started
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) Node version: 10.16.2
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) AppName: system
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) Transport: log
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) Transport HTTP Endpoint: https://localhost:10601
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) [Log] Identifying the app
+Fri Nov 27 2020 16:57:22 GMT+0530 (India Standard Time) Request sent
+{
+    "url": "https://api.stackify.com/Metrics/IdentifyApp",
+    "method": "POST",
+    "json": true,
+    "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "X-Stackify-Key": "8Xj6Nn0Vc5Qm5Eb4Nb2Wt3Ti4Ur0Ah1Xt2Qc1Lw",
+        "X-Stackify-PV": "V1"
+    },
+    "body": {
+        "DeviceName": "DESKTOP-VVQ0EE7",
+        "AppName": "system",
+        "ConfiguredAppName": "system",
+        "ConfiguredEnvironmentName": "qa"
+    }
+}
+Fri Nov 27 2020 16:57:24 GMT+0530 (India Standard Time) Response received
+url: https://api.stackify.com/Metrics/IdentifyApp:443, method: POST, status: 200
+response: {
+    "DeviceID": null,
+    "DeviceAppID": null,
+    "AppNameID": "3542c784-a330-eb11-b9ed-0003ffcfc2ca",
+    "EnvID": 2,
+    "Env": "qa",
+    "AppName": "system",
+    "AppEnvID": "1d51dc7c-6629-4365-ab9b-771c20e5128d",
+    "DeviceAlias": "DESKTOP-VVQ0EE7"
+}
+Fri Nov 27 2020 16:57:24 GMT+0530 (India Standard Time) [Log] Successfully identified
+Fri Nov 27 2020 16:57:25 GMT+0530 (India Standard Time) Running Logger Job
+Fri Nov 27 2020 16:57:25 GMT+0530 (India Standard Time) Checking the queue: 0 messages
+Fri Nov 27 2020 16:57:30 GMT+0530 (India Standard Time) Running Logger Job
+Fri Nov 27 2020 16:57:30 GMT+0530 (India Standard Time) Checking the queue: 0 messages
+Fri Nov 27 2020 16:57:35 GMT+0530 (India Standard Time) Running Logger Job
+Fri Nov 27 2020 16:57:35 GMT+0530 (India Standard Time) Checking the queue: 0 messages
+Fri Nov 27 2020 16:57:40 GMT+0530 (India Standard Time) Running Logger Job
+Fri Nov 27 2020 16:57:40 GMT+0530 (India Standard Time) Checking the queue: 0 messages
+Fri Nov 27 2020 16:57:45 GMT+0530 (India Standard Time) Running Logger Job
+Fri Nov 27 2020 16:57:45 GMT+0530 (India Standard Time) Checking the queue: 0 messages
+Fri Nov 27 2020 16:57:50 GMT+0530 (India Standard Time) Running Logger Job
+Fri Nov 27 2020 16:57:50 GMT+0530 (India Standard Time) Checking the queue: 0 messages
+Fri Nov 27 2020 16:57:55 GMT+0530 (India Standard Time) Running Logger Job
+Fri Nov 27 2020 16:57:55 GMT+0530 (India Standard Time) Checking the queue: 0 messages
+Fri Nov 27 2020 16:57:59 GMT+0530 (India Standard Time) Exiting the app
