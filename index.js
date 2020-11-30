@@ -18,12 +18,12 @@ var db = process.env.MONGODB || 'mongodb+srv://srikanth:ktNHcwFdhRcval8w@system.
 app.use(bodyParser.json());
 app.use(bodyParserError.beautify());
 app.use(stackify.expressExceptionHandler);
-mongoose.connect(db, {
+ mongoose.connect(db, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
 });
-mongoose.connection.on('open', function () {
+ mongoose.connection.on('open', function () {
     console.log('MongoDB Connected.');
 });
 mongoose.connection.on('error', function () {
@@ -44,5 +44,5 @@ mongoose.connection.on('error', function () {
 
 app.listen(port, () => console.log("server running port at. :" + port));
 app.use('/', routes)
-stackify.start({apiKey: '8Xj6Nn0Vc5Qm5Eb4Nb2Wt3Ti4Ur0Ah1Xt2Qc1Lw', appName: 'system', env: 'qa', debug: true});
+stackify.start({apiKey: '8Xj6Nn0Vc5Qm5Eb4Nb2Wt3Ti4Ur0Ah1Xt2Qc1Lw', appName: 'system', env: 'test', debug: true});
 module.exports = app;
