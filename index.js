@@ -1,3 +1,4 @@
+require('stackify-node-apm');
 const express = require('express')
 const app = express()
 var normalizePort = require('normalize-port');

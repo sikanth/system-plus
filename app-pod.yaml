@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nodejs-pod
+spec:
+  replicas: 1
+  selector:
+    app: nodejs-starter
+  template:
+    metadata:
+      name: nodejs-starter
+      labels:
+        app: nodejs-starter
+    spec:
+      containers:
+      - name: nodongo
+        image: kavithacrgyrit/nodejs-starter
+        volumeMounts:
+          - mountPath: /usr/local/stackify
+            name: stackify
+      volumes:
+        - name: stackify
+          hostPath: 
+            path: /var/stackify
+            type: DirectoryOrCreate

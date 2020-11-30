@@ -29,6 +29,11 @@
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.15",
     "mongoose-paginate": "^5.0.3",
-    "normalize-port": "^1.0.0"
-  }
+    "normalize-port": "^1.0.0",
+    "stackify-node-apm": "^1.13.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
 }
